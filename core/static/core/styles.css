@@ -45,3 +45,28 @@ body {
   background-color: #ff7f5f;
   border-color: #ff7f5f;
 }
+
+/* Style for the image container */
+.image-container {
+  position: relative;
+  display: inline-block;
+}
+
+/* Image styling */
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px; /* Optional: for rounded corners */
+  opacity: 70%;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .jumbotron .row {
+    flex-direction: column-reverse;
+  }
+
+  .jumbotron img {
+    margin-bottom: 20px;
+  }
+}
