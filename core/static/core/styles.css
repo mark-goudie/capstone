@@ -50,6 +50,8 @@ body {
 .image-container {
   position: relative;
   display: inline-block;
+  overflow: hidden;
+  border-radius: 5px; /* Optional: Rounded corners */
 }
 
 /* Image styling */
@@ -58,6 +60,12 @@ body {
   height: auto;
   border-radius: 5px; /* Optional: for rounded corners */
   opacity: 70%;
+  transition: transform 0.5s, opacity 0.5s; /* Apply transition to both transform and opacity */
+}
+
+.img-fluid:hover {
+  transform: scale(1.1);
+  opacity: 100%;
 }
 
 /* Responsive adjustments */
