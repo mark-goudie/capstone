@@ -29,3 +29,17 @@ Guidelines for contributing to your project.
 ## License
 
 Information about the license under which your project is distributed.
+
+## Users
+
+Superuser
+
+- username: admin
+- email: admin@foo.com
+- password: password0
+
+Primary user
+
+- username: johndoe
+- email: johndoe@foo.com
+- password: password1

@@ -1,0 +1,47 @@
+html,
+body {
+  height: 100%;
+  margin: 0; /* Reset default margin */
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Use viewport height to ensure full height */
+}
+
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Rest of your CSS */
+
+.footer {
+  background-color: #343a40; /* Same as navbar for consistency */
+  color: #d3d3d3; /* Grey text color */
+}
+
+.footer a {
+  color: #d3d3d3; /* Grey text color for links */
+}
+
+.footer a:hover {
+  color: white; /* Change color on hover */
+}
+
+.footer h5 {
+  color: white; /* White color for headings */
+  margin-bottom: 15px; /* Spacing below headings */
+}
+
+.btn-primary {
+  background-color: #f97141;
+  border-color: #f97141;
+}
+
+.btn-primary:hover {
+  background-color: #ff7f5f;
+  border-color: #ff7f5f;
+}
