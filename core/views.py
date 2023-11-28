@@ -6,8 +6,11 @@ from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.core.paginator import Paginator
 from django.views.decorators.csrf import csrf_exempt
+from django.views.generic import ListView, DetailView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.urls import reverse_lazy
 
-from .models import User
+from .models import User, Subject
 
 import json
 
@@ -64,3 +67,32 @@ def register(request):
         return HttpResponseRedirect(reverse("index"))
     else:
         return render(request, "core/register.html")
+
+
+class SubjectListView(ListView):
+    model = Subject
+    context_object_name = 'subjects'
+    template_name = 'subjects/subject_list.html'
+
+class SubjectDetailView(DetailView):
+    model = Subject
+    context_object_name = 'subject'
+    template_name = 'subjects/subject_detail.html'
+
+class SubjectCreateView(CreateView):
+    model = Subject
+    fields = ['name', 'description']
+    template_name = 'subjects/subject_form.html'
+    success_url = reverse_lazy('subject_list')
+
+class SubjectUpdateView(UpdateView):
+    model = Subject
+    fields = ['name', 'description']
+    template_name = 'subjects/subject_form.html'
+    success_url = reverse_lazy('subject_list')
+
+class SubjectDeleteView(DeleteView):
+    model = Subject
+    context_object_name = 'subject'
+    template_name = 'subjects/subject_confirm_delete.html'
+    success_url = reverse_lazy('subject_list')

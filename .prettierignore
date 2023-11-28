@@ -2,5 +2,10 @@ base.html
 index.html
 login.html
 register.html
+subject_list.html
+subject_detail.html
+subject_form.html
+subject_confirm_delete.html
+
 
 

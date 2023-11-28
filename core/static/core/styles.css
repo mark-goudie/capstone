@@ -11,7 +11,7 @@ body {
 }
 
 .main {
-  flex: 1;
+  flex: 1 0 auto;
   display: flex;
   flex-direction: column;
 }
@@ -21,6 +21,7 @@ body {
 .footer {
   background-color: #343a40; /* Same as navbar for consistency */
   color: #d3d3d3; /* Grey text color */
+  flex-shrink: 0;
 }
 
 .footer a {
@@ -77,4 +78,12 @@ body {
   .jumbotron img {
     margin-bottom: 20px;
   }
+}
+
+.small-text {
+  font-size: 0.9rem; /* Adjust the size as needed */
+}
+
+.rem2btm {
+  margin-bottom: 2rem;
 }
