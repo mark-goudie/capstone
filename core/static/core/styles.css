@@ -86,3 +86,14 @@ body {
 .rem2btm {
   margin-bottom: 2rem;
 }
+
+.paginator-link {
+  background-color: #f97141; /* Same as .btn-primary */
+  border-color: #f97141; /* Same as .btn-primary */
+  color: white; /* Assuming you want white text */
+}
+
+.paginator-link:hover {
+  background-color: #ff7f5f; /* Same as .btn-primary:hover */
+  border-color: #ff7f5f; /* Same as .btn-primary:hover */
+}

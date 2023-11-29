@@ -10,7 +10,7 @@ from django.views.generic import ListView, DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 
-from .models import User, Subject
+from .models import User, Subject, Post, UserExtended
 
 import json
 
@@ -96,3 +96,22 @@ class SubjectDeleteView(DeleteView):
     context_object_name = 'subject'
     template_name = 'subjects/subject_confirm_delete.html'
     success_url = reverse_lazy('subject_list')
+
+def forum(request):
+    posts_list = Post.objects.all().order_by('-timestamp')
+    paginator = Paginator(posts_list, 10)
+
+    page_number = request.GET.get('page')
+    posts = paginator.get_page(page_number)
+
+    return render(request, "core/forum.html", {"posts": posts})
+
+def new_post(request):
+    if not request.user.is_authenticated:
+        return HttpResponseRedirect(reverse("login"))
+    elif request.method == "POST":
+        content = request.POST["post_content"]
+        post = Post(post=content, user=request.user)
+        post.save()
+        return redirect('forum')
+    return render(request, 'code/forum.html')
