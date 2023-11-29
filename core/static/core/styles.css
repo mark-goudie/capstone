@@ -11,7 +11,7 @@ body {
 }
 
 .main {
-  flex: 1 0 auto;
+  flex: 1;
   display: flex;
   flex-direction: column;
 }
@@ -21,7 +21,6 @@ body {
 .footer {
   background-color: #343a40; /* Same as navbar for consistency */
   color: #d3d3d3; /* Grey text color */
-  flex-shrink: 0;
 }
 
 .footer a {
