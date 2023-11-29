@@ -19,5 +19,6 @@ urlpatterns = [
     path('subject/<int:pk>/edit/', SubjectUpdateView.as_view(), name='subject_edit'),
     path('subject/<int:pk>/delete/', SubjectDeleteView.as_view(), name='subject_delete'),
     path('forum', views.forum, name='forum'),
-    path("new_post", views.new_post, name="new_post")
+    path("new_post", views.new_post, name="new_post"),
+    path('faq', views.faq, name='faq'),
 ]

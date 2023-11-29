@@ -115,3 +115,7 @@ def new_post(request):
         post.save()
         return redirect('forum')
     return render(request, 'code/forum.html')
+
+def faq(request): 
+    return render(request, 'core/faq.html')
+    
