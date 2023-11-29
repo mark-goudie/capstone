@@ -13,7 +13,7 @@
 </head>
 <body>
     <div class="main">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
             <a class="navbar-brand" href="{% url 'index' %}">PrimaryED CMS</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -36,6 +36,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'forum' %}">Forum</a>
                         </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="{% url 'faq' %}">FAQ</a>
+                      </li>
                     {% else %}
                         <li class="nav-item">
                             <a class="nav-link" href="#">About</a>
@@ -83,7 +86,7 @@
                     <h5>Help and Support</h5>
                     <ul class="list-unstyled">
                         <li><a href="{% url 'faq' %}">FAQ</a></li>
-                        <li><a href="#">Contact Support</a></li>
+                        <li><a href="{% url 'contact' %}">Contact Support</a></li>
                         <!-- More links here -->
                     </ul>
                 </div>

@@ -118,4 +118,6 @@ def new_post(request):
 
 def faq(request): 
     return render(request, 'core/faq.html')
-    
+
+def contact(request):
+    return render(request, 'core/contact_support.html')
