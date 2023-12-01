@@ -88,16 +88,6 @@ If you prefer not to use pipenv, you can set up the project using a virtual envi
 4. Install dependencies with `pip install -r requirements.txt`.
 5. Run the application using `python3 manage.py runserver`.
 
-## Features
-
-The project includes a custom user model for authentication.
-Resources can be filtered by grade level and type in the resource library.
-The forum allows for community discussions and interactions.
-The application is designed with responsiveness in mind, ensuring compatibility across various devices.
-The project includes a custom interactive quiz feature within the resource detail view, showcasing the application's dynamic capabilities.
-User-generated content, such as forum posts and resource contributions, demonstrates the application's interactive nature.
-The project adheres to Django's security best practices, ensuring a secure user experience.
-
 ## Disclosures
 
 The project references code snippets from the previous submission of the CS50W course's Project 4 (Network) assignment. The snippets are used to implement the Forum feature of the application.
