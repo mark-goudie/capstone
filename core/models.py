@@ -32,3 +32,28 @@ class ContactSubmission(models.Model):
     def __str__(self):
         return f"{self.name} sent a message: {self.message}"
     
+from django.db import models
+
+class Resource(models.Model):
+    RESOURCE_TYPES = [
+        ('VIDEO', 'Video'),
+        ('DOC', 'Document'),
+        ('QUIZ', 'Quiz'),
+        # Add more types as needed
+    ]
+    GRADE_LEVELS = [
+        ('1', 'Grade 1'),
+        ('2', 'Grade 2'),
+        # Add more grades as needed
+    ]
+
+    title = models.CharField(max_length=255)
+    description = models.TextField()
+    file_link = models.URLField(blank=True, null=True)  # Assuming resources are linked
+    subject = models.ForeignKey(Subject, on_delete=models.CASCADE)
+    grade_level = models.CharField(max_length=5, choices=GRADE_LEVELS)
+    resource_type = models.CharField(max_length=5, choices=RESOURCE_TYPES)
+
+    def __str__(self):
+        return self.title
+
