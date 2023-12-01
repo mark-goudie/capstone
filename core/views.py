@@ -158,16 +158,6 @@ def contact_submit(request):
     # If not POST request, just render the form
     return render(request, 'core/contact_support.html')
 
-def upload_resource(request):
-    if request.method == 'POST':
-        form = ResourceForm(request.POST, request.FILES)
-        if form.is_valid():
-            form.save()
-            return redirect('resource_list')  # Redirect to the resource list page
-    else:
-        form = ResourceForm()
-    return render(request, 'core/resource_form.html', {'form': form})
-
 def resource_list(request):
     query = request.GET.get('query', '')
     grade_level = request.GET.get('grade_level', '')

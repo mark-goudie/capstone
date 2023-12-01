@@ -49,7 +49,7 @@ class Resource(models.Model):
 
     title = models.CharField(max_length=255)
     description = models.TextField()
-    file_link = models.URLField(blank=True, null=True)  # Assuming resources are linked
+    file_link = models.URLField(blank=True, null=True)  
     subject = models.ForeignKey(Subject, on_delete=models.CASCADE)
     grade_level = models.CharField(max_length=5, choices=GRADE_LEVELS)
     resource_type = models.CharField(max_length=5, choices=RESOURCE_TYPES)

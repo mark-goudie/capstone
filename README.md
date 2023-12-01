@@ -12,7 +12,39 @@ PrimaryEd CMS is a Learning Management System (LMS) designed for primary school 
 
 ## Distinctiveness and Complexity
 
-PrimaryEd CMS stands out due to its focus on primary education, providing a specialized resource repository and interactive tools for teachers. The complexity of the project is evident in its comprehensive set of features, including user authentication, resource management, a community forum, and an interactive quiz system. The application integrates Django's powerful backend capabilities with a user-friendly frontend, ensuring a seamless user experience.
+Certainly! Here's an expanded version of the "Distinctiveness and Complexity" section for your README.md, incorporating the details you provided:
+
+---
+
+## Distinctiveness and Complexity
+
+PrimaryEd CMS is a unique and complex project tailored specifically for primary education. It stands out with its specialised focus on providing a comprehensive resource repository and interactive tools for teachers. The complexity of the project is evident in its multifaceted features and the integration of various models that aggregate learning from previous projects into a more comprehensive web application.
+
+### Key Models and Features
+
+- **User Model**: Inherits from Django's `AbstractUser`, providing a foundation for user authentication and profile management.
+- **Subject Model**: Manages subjects with fields for subject name and description, to appropriately organise the educational content.
+- **Post Model**: Facilitates a community forum where teachers can share insights and discuss educational topics. It includes features for posting content, user association, timestamps, and likes.
+- **UserExtended Model**: An extension of the User model, allowing for additional user-specific data and customisation.
+- **ContactSubmission Model**: Handles user-submitted queries and feedback, storing them for admin review. This model includes fields for name, email, message, and submission timestamp.
+- **Resource Model**: A versatile model for managing educational resources. It includes fields for title, description, file links, subject association, grade level, and resource type (e.g., Video, Document, Quiz).
+
+### Testing
+
+Comprehensive tests have been included to ensure the reliability and functionality of the models and views. These tests cover the creation and validation of subjects and posts, the functionality of the index view, and the listing of subjects in the SubjectListView.
+
+### Forms and Admin Configuration
+
+- **Forms**: Utilised to capture user data within the admin module, enhancing the interactivity and usability of the CMS.
+- **Admin Model Setup**: Carefully configured to manage resources, subjects, and maintain user information effectively.
+
+### UI Design
+
+A significant emphasis was placed on UI design to ensure a modern, aesthetically consistent, mobile-responsive user experience. This approach caters to the needs of primary education professionals, providing them with an intuitive and engaging platform.
+
+### Conclusion
+
+In summary, PrimaryEd CMS exemplifies distinctiveness through its specialised focus on primary education and complexity through its integration of various Django features, building upon the learnings from previous projects within CS50W. The project not only serves as an educational resource repository but also fosters a community of educators through its forum and interactive tools. The application's backend and user-friendly frontend make it a comprehensive solution for primary school teachers' needs.
 
 ## Project Structure
 
@@ -41,12 +73,26 @@ PrimaryEd CMS stands out due to its focus on primary education, providing a spec
 
 To run PrimaryEd CMS:
 
-1. Clone the repository: git clone https://github.com/mark-goudie/capstone.git
-2. Navigate to the project directory: cd capstone
-3. Install required packages: pip install -r requirements.txt
-4. Run migrations: python manage.py migrate
-5. Start the Django server: python manage.py runserver
-6. Access the application at http://localhost:8000/
+### Using pipenv (recommended)
+
+1.  Ensure you have `pipenv` installed. If not, install it using `pip install pipenv`.
+2.  Clone the repository: git clone https://github.com/mark-goudie/capstone.git
+3.  Navigate to the project directory: cd capstone, and run `pipenv install` to set up the project environment and install dependencies.
+4.  Activate the virtual environment: pipenv shell
+5.  Install required packages: pip install -r requirements.txt
+6.  Run migrations: python3 manage.py migrate
+7.  Start the Django server: python3 manage.py runserver
+8.  Access the application at http://localhost:8000/
+
+### Using requirements.txt
+
+If you prefer not to use pipenv, you can set up the project using a virtual environment and `requirements.txt`.
+
+1. Clone the repository to your local machine.
+2. Create a virtual environment in the project directory (`python -m venv venv`).
+3. Activate the virtual environment (`source venv/bin/activate` on Unix/macOS or `venv\Scripts\activate` on Windows).
+4. Install dependencies with `pip install -r requirements.txt`.
+5. Run the application using `python3 manage.py runserver`.
 
 ## Features
 
