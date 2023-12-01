@@ -6,7 +6,6 @@ from .views import (
     SubjectCreateView, 
     SubjectUpdateView, 
     SubjectDeleteView,
-    upload_resource
 )
 
 urlpatterns = [
