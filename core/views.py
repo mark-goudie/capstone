@@ -73,29 +73,29 @@ def register(request):
 class SubjectListView(ListView):
     model = Subject
     context_object_name = 'subjects'
-    template_name = 'subjects/subject_list.html'
+    template_name = 'core/subject_list.html'
 
 class SubjectDetailView(DetailView):
     model = Subject
     context_object_name = 'subject'
-    template_name = 'subjects/subject_detail.html'
+    template_name = 'core/subject_detail.html'
 
 class SubjectCreateView(CreateView):
     model = Subject
     fields = ['name', 'description']
-    template_name = 'subjects/subject_form.html'
+    template_name = 'core/subject_form.html'
     success_url = reverse_lazy('subject_list')
 
 class SubjectUpdateView(UpdateView):
     model = Subject
     fields = ['name', 'description']
-    template_name = 'subjects/subject_form.html'
+    template_name = 'core/subject_form.html'
     success_url = reverse_lazy('subject_list')
 
 class SubjectDeleteView(DeleteView):
     model = Subject
     context_object_name = 'subject'
-    template_name = 'subjects/subject_confirm_delete.html'
+    template_name = 'core/subject_confirm_delete.html'
     success_url = reverse_lazy('subject_list')
 
 def forum(request):
@@ -138,7 +138,7 @@ def like_post(request, post_id):
         return JsonResponse({"likes": post.likes.count(), "liked": liked})
     except Post.DoesNotExist:
         return JsonResponse({"error": "Post not found"}, status=404)
-        
+
 
 def contact_submit(request):
     if request.method == 'POST':
