@@ -14,21 +14,21 @@
                 <input type="text" class="form-control" name="query" placeholder="Search resources...">
             </div>
             <div class="col">
-                <select class="form-control" name="grade_level">
-                    <option value="">Select Grade Level</option>
-                    {% for grade in Resource.GRADE_LEVELS %}
-                    <option value="{{ grade.0 }}">{{ grade.1 }}</option>
-                    {% endfor %}
-                </select>
+              <select class="form-control" name="grade_level">
+                  <option value="">Select Grade Level</option>
+                  {% for grade in grade_levels %}
+                  <option value="{{ grade.0 }}">{{ grade.1 }}</option>
+                  {% endfor %}
+              </select>
             </div>
             <div class="col">
-                <select class="form-control" name="resource_type">
-                    <option value="">Select Resource Type</option>
-                    {% for type in Resource.RESOURCE_TYPES %}
-                    <option value="{{ type.0 }}">{{ type.1 }}</option>
-                    {% endfor %}
-                </select>
-            </div>
+              <select class="form-control" name="resource_type">
+                  <option value="">Select Resource Type</option>
+                  {% for type in resource_types %}
+                  <option value="{{ type.0 }}">{{ type.1 }}</option>
+                  {% endfor %}
+              </select>
+              </div>
             <div class="col">
                 <button type="submit" class="btn btn-primary">Filter</button>
             </div>

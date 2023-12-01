@@ -181,6 +181,12 @@ def resource_list(request):
     if resource_type:
         resources = resources.filter(resource_type=resource_type)
 
+    context = {
+        'resources': resources,
+        'grade_levels': Resource.GRADE_LEVELS,
+        'resource_types': Resource.RESOURCE_TYPES,
+    }   
+
     return render(request, 'core/resource_list.html', {'resources': resources})
 
 def resource_detail(request, resource_id):
