@@ -22,4 +22,13 @@ class Post (models.Model):
 
 class UserExtended(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
+
+class ContactSubmission(models.Model):
+    name = models.CharField(max_length=64)
+    email = models.CharField(max_length=64)
+    message = models.TextField(blank=True)
+    submitted_on = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.name} sent a message: {self.message}"
     

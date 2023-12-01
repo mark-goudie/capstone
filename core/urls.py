@@ -21,5 +21,7 @@ urlpatterns = [
     path('forum', views.forum, name='forum'),
     path("new_post", views.new_post, name="new_post"),
     path('faq', views.faq, name='faq'),
-    path('contact', views.contact, name='contact')
+    path('contact', views.contact, name='contact'),
+    path("like/<int:post_id>", views.like_post, name="like_post"),
+    path('contact/submit', views.contact_submit, name='contact_submit')
 ]

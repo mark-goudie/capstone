@@ -1,5 +1,6 @@
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 from django.db import IntegrityError
 from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
 from django.shortcuts import render, redirect
@@ -10,7 +11,7 @@ from django.views.generic import ListView, DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 
-from .models import User, Subject, Post, UserExtended
+from .models import User, Subject, Post, UserExtended, ContactSubmission
 
 import json
 
@@ -120,4 +121,38 @@ def faq(request):
     return render(request, 'core/faq.html')
 
 def contact(request):
+    return render(request, 'core/contact_support.html')
+
+def like_post(request, post_id):
+    if not request.user.is_authenticated:
+        return JsonResponse({"error": "Login required"}, status=401)
+
+    try:
+        post = Post.objects.get(pk=post_id)
+        if request.user in post.likes.all():
+            post.likes.remove(request.user)
+            liked = False
+        else:
+            post.likes.add(request.user)
+            liked = True
+        return JsonResponse({"likes": post.likes.count(), "liked": liked})
+    except Post.DoesNotExist:
+        return JsonResponse({"error": "Post not found"}, status=404)
+        
+
+def contact_submit(request):
+    if request.method == 'POST':
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        message = request.POST.get('message')
+
+        ContactSubmission.objects.create(name=name, email=email, message=message)
+
+        # Add success message
+        messages.success(request, 'Your message has been sent successfully!')
+
+        # Render the same contact support template
+        return render(request, 'core/contact_support.html')
+
+    # If not POST request, just render the form
     return render(request, 'core/contact_support.html')

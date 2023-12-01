@@ -12,6 +12,17 @@
     <link rel="icon" href="{% static 'core/favicon.ico' %}" />
 </head>
 <body>
+  {% if messages %}
+  {% for message in messages %}
+      <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+          {{ message }}
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+          </button>
+      </div>
+  {% endfor %}
+  {% endif %}
+
     <div class="main">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
             <a class="navbar-brand" href="{% url 'index' %}">PrimaryED CMS</a>
@@ -104,7 +115,7 @@
             </div>
         </div>
     </footer>
-
+    <script src="{% static 'core/index.js' %}"></script>
     <!-- Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
