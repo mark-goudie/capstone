@@ -12,12 +12,6 @@ PrimaryEd CMS is a Learning Management System (LMS) designed for primary school 
 
 ## Distinctiveness and Complexity
 
-Certainly! Here's an expanded version of the "Distinctiveness and Complexity" section for your README.md, incorporating the details you provided:
-
----
-
-## Distinctiveness and Complexity
-
 PrimaryEd CMS is a unique and complex project tailored specifically for primary education. It stands out with its specialised focus on providing a comprehensive resource repository and interactive tools for teachers. The complexity of the project is evident in its multifaceted features and the integration of various models that aggregate learning from previous projects into a more comprehensive web application.
 
 ### Key Models and Features
