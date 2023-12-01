@@ -16,26 +16,26 @@ PrimaryEd CMS stands out due to its focus on primary education, providing a spec
 
 ## Project Structure
 
-core/: Main application directory.  
-templates/: Contains HTML templates for the application.  
-base.html: Base template with common layout and navigation.  
-index.html: Homepage of the application.  
-login.html, register.html: Authentication templates.  
-subject_list.html, subject_detail.html: Templates for subject listing and details.  
-forum.html: Community forum template.  
-faq.html: Frequently Asked Questions page.  
-contact_support.html: Contact form for user support.  
-resource_list.html, resource_detail.html: Resource library and individual resource detail templates.  
-models.py: Defines models like User, Subject, Post, and Resource.  
-views.py: Contains views for handling different application functionalities.  
-urls.py: URL configurations for the application.  
-admin.py: Admin configurations for managing application models.  
-forms.py: Django forms for resource upload and other functionalities.  
-PrimaryEdLMS/: Project configuration directory.  
-settings.py: Settings for the Django project.  
-urls.py: Root URL configurations.  
-requirements.txt: Lists Python packages required for the project.  
-manage.py: Django command-line utility for administrative tasks.
+- core/: Main application directory.
+  - templates/: Contains HTML templates for the application.
+  - base.html: Base template with common layout and navigation.
+  - index.html: Homepage of the application.
+  - login.html, register.html: Authentication templates.
+  - subject_list.html, subject_detail.html: Templates for subject listing and details.
+  - forum.html: Community forum template.
+  - faq.html: Frequently Asked Questions page.
+  - contact_support.html: Contact form for user support.
+  - resource_list.html, resource_detail.html: Resource library and individual resource detail templates.
+- models.py: Defines models like User, Subject, Post, and Resource.
+- views.py: Contains views for handling different application functionalities.
+- urls.py: URL configurations for the application.
+- admin.py: Admin configurations for managing application models.
+- forms.py: Django forms for resource upload and other functionalities.
+- PrimaryEdLMS/: Project configuration directory.
+  - settings.py: Settings for the Django project.
+  - urls.py: Root URL configurations.
+- requirements.txt: Lists Python packages required for the project.
+- manage.py: Django command-line utility for administrative tasks.
 
 ## Installation
 
