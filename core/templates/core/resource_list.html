@@ -37,17 +37,16 @@
 
     <!-- Resource List -->
     <div class="resource-list">
-        {% for resource in resources %}
-        <div class="card mb-3">
-            <div class="card-body">
-                <h5 class="card-title">{{ resource.title }}</h5>
-                <p class="card-text">{{ resource.description }}</p>
-                <a href="{{ resource.file_link }}" class="btn btn-primary" target="_blank">View Resource</a>
-            </div>
-        </div>
-        {% empty %}
-        <p>No resources found.</p>
-        {% endfor %}
-    </div>
+      {% for resource in resources %}
+      <div class="card mb-3">
+          <div class="card-body">
+              <h5 class="card-title"><a href="{% url 'resource_detail' resource.id %}">{{ resource.title }}</a></h5>
+              <p class="card-text">{{ resource.description|truncatewords:20 }}</p>
+          </div>
+      </div>
+      {% empty %}
+      <p>No resources found.</p>
+      {% endfor %}
+  </div>
 </div>
 {% endblock %}

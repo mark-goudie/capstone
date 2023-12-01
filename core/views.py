@@ -4,7 +4,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.db import IntegrityError
 from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse
 from django.core.paginator import Paginator
 from django.views.decorators.csrf import csrf_exempt
@@ -182,3 +182,10 @@ def resource_list(request):
         resources = resources.filter(resource_type=resource_type)
 
     return render(request, 'core/resource_list.html', {'resources': resources})
+
+def resource_detail(request, resource_id):
+    # Fetch the resource by ID or return 404 if not found
+    resource = get_object_or_404(Resource, pk=resource_id)
+
+    # Render the template with the resource context
+    return render(request, 'core/resource_detail.html', {'resource': resource})

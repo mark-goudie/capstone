@@ -27,4 +27,5 @@ urlpatterns = [
     path('contact/submit', views.contact_submit, name='contact_submit'),
     path('upload_resource/', views.upload_resource, name='upload_resource'),
     path('resources/', views.resource_list, name='resource_list'),
+    path('resources/<int:resource_id>/', views.resource_detail, name='resource_detail'),
 ]

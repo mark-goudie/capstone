@@ -1,0 +1,33 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+{% block body %}
+<div class="container mt-4">
+    <h1>{{ resource.title }}</h1>
+    <hr>
+
+    <div class="resource-details">
+        <p><strong>Description:</strong></p>
+        <!-- Apply the linebreaksbr filter to preserve line breaks in the description -->
+        <p>{{ resource.description|linebreaksbr }}</p>
+
+        {% if resource.file_link %}
+            <p><strong>Cirriculum Link:</strong> <a href="{{ resource.file_link }}" target="_blank">View Resource</a></p>
+        {% endif %}
+
+        <p><strong>Grade Level:</strong> {{ resource.get_grade_level_display }}</p>
+        <p><strong>Resource Type:</strong> {{ resource.get_resource_type_display }}</p>
+
+        <!-- Additional details can be added here -->
+    </div>
+
+    <!-- Interactive Quiz Logic (if applicable) -->
+    {% if resource.resource_type == 'QUIZ' %}
+        <!-- Render quiz content here -->
+        <!-- This part will require custom implementation based on how quiz data is structured -->
+    {% endif %}
+
+    <a href="{% url 'resource_list' %}" class="btn btn-primary mt-3 rem2btm">Back to Resources</a>
+</div>
+{% endblock %}
