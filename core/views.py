@@ -184,4 +184,4 @@ def resource_detail(request, resource_id):
     resource = get_object_or_404(Resource, pk=resource_id)
 
     # Render the template with the resource context
-    return render(request, 'core/resource_list.html', context)
+    return render(request, 'core/resource_detail.html', {'resource': resource})
