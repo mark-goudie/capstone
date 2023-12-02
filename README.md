@@ -8,7 +8,7 @@ https://cs50.harvard.edu/web/2020/projects/final/capstone/
 
 ## Overview
 
-PrimaryEd CMS is a Learning Management System (LMS) designed for primary school teachers. It provides a platform to find, organize, and utilize educational resources, quizzes, and exercises for classroom learning. This project is developed as part of the CS50W course's final capstone project.
+PrimaryEd CMS is a Content Management System (CMS) designed for primary school teachers. It provides a platform to find, organize, and utilize educational resources, quizzes, and exercises for classroom learning. This project is developed as part of the CS50W course's final capstone project.
 
 ## Distinctiveness and Complexity
 
